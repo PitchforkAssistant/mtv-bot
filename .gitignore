@@ -92,4 +92,4 @@ ENV/
 config.json
 
 # Sublime
-.sublime-workspace
+*.sublime-workspace
