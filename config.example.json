@@ -1,0 +1,57 @@
+{
+	"subreddit" : "subreddithere",
+	"retry_delay" : 60,
+	"actions" : [
+		{
+			"flair_text" : "Too short",
+			"flair_class" : "grey",
+			"report" : "Video might be too short!",
+			"range" : ["PT0S","PT4M59S"]
+		},
+		{
+			"flair_text" : "5-7 Minutes",
+			"flair_class" : "purple",
+			"range" : ["PT5M","PT6M59S"]
+		},
+		{
+			"flair_text" : "7-10 Minutes",
+			"flair_class" : "blue",
+			"range" : ["PT7M","PT9M59S"]
+		},
+		{
+			"flair_text" : "10-15 Minutes",
+			"flair_class" : "green",
+			"range" : ["PT10M","PT14M59S"]
+		},
+		{
+			"flair_text" : "15-30 Minutes",
+			"flair_class" : "orange",
+			"range" : ["PT15M","PT29M59S"]
+		},
+		{
+			"flair_text" : "30 Minutes Plus",
+			"flair_class" : "red",
+			"range" : ["PT30M","PT60M"]
+		},
+		{
+			"flair_text" : "Too long",
+			"flair_class" : "grey",
+			"report" : "Video might be too long!",
+			"range" : ["PT60M1S","PT24H"]
+		}
+	],
+	"auth" :
+	{
+		"reddit" : {
+			"client_id" : "clientidhere",
+			"client_secret" : "clientsecrethere",
+			"user_agent" : "useragenthere",
+			"username" : "usernamehere",
+			"password" : "passwordhere",
+			"redirect_uri" : "redirecturihere"
+		},
+		"youtube" : {
+			"api_key" : "youtubeapikeyhere"
+		}
+	}
+}

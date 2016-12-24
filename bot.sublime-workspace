@@ -1,0 +1,684 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"for",
+				"for\tfor (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"remo",
+				"removeClass"
+			],
+			[
+				"print",
+				"printTable"
+			],
+			[
+				"x",
+				"x-small"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"old",
+				"oldTouchDistance"
+			],
+			[
+				"TriG",
+				"TriggerServerEvent"
+			],
+			[
+				"player",
+				"playerId"
+			],
+			[
+				"Tri",
+				"TriggerServerEvent"
+			],
+			[
+				"u",
+				"uppercase"
+			],
+			[
+				"re",
+				"registered"
+			],
+			[
+				"T",
+				"TriggerEvent"
+			],
+			[
+				"pa",
+				"passwordSubmit"
+			],
+			[
+				"Trigg",
+				"TriggerClientEvent"
+			],
+			[
+				"chec",
+				"checkPassword"
+			],
+			[
+				"is",
+				"isRegistered"
+			],
+			[
+				"play",
+				"playerId"
+			],
+			[
+				"Trig",
+				"TriggerClientEvent"
+			],
+			[
+				"pass",
+				"passwordCorrect"
+			],
+			[
+				"pas",
+				"passwordCorrect"
+			],
+			[
+				"first",
+				"firstVisit"
+			],
+			[
+				"bakc",
+				"background-size"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"s",
+				"smaller"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"bak",
+				"background-color"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"align",
+				"align-items"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"d",
+				"div\tTag"
+			],
+			[
+				"fir",
+				"firstDelimiterEnd"
+			],
+			[
+				"split",
+				"splitParams"
+			],
+			[
+				"iter",
+				"iteratorToArray"
+			],
+			[
+				"tac",
+				"tactile"
+			],
+			[
+				"channe",
+				"channel_id"
+			],
+			[
+				"inter",
+				"inter_info"
+			],
+			[
+				"webs",
+				"websocket"
+			],
+			[
+				"pack",
+				"packet_id"
+			],
+			[
+				"packet",
+				"packet_string"
+			],
+			[
+				"websocket",
+				"websocket_connect"
+			],
+			[
+				"chat",
+				"chat_info"
+			],
+			[
+				"auth",
+				"auth_info"
+			],
+			[
+				"login",
+				"login_response"
+			],
+			[
+				"authenti",
+				"Authentication"
+			],
+			[
+				"log",
+				"login_response"
+			],
+			[
+				"origin",
+				"Originally"
+			],
+			[
+				"Pla",
+				"Plateau"
+			],
+			[
+				"ENTIY",
+				"MC_ENTITYHORSE_DEFAULT"
+			],
+			[
+				"jungle",
+				"JungleHills"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 196.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"160-50",
+			"120+20",
+			"170-50",
+			"150+20",
+			"1-2",
+			"print(\"test\")",
+			"import requests",
+			"print(\"test\")",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/phase/Downloads/vimeo.json",
+		"/C/Users/phase/Workspace/Python/mtv_bot/config.json",
+		"/C/Users/phase/Workspace/Python/mtv_bot/bot.py",
+		"/C/Users/phase/Workspace/CSS/ripinpiece/Stylesheet/Misc.css",
+		"/C/Users/phase/Workspace/JavaScript/(filter) remover/(filter) and filtered subs list remover.js",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/menu/ui/menu.css",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/menu/menu_client.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/login/login_client.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/login/login_server.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/playertools/playertools_server.lua",
+		"/C/Users/phase/Workspace/JavaScript/(filter) remover/(filter) remover.js",
+		"/C/Users/phase/Workspace/Python/Website Test/main.py",
+		"/C/Program Files (x86)/Steam/steamapps/common/Starbound/storage/player/e4a4c4571c1d50bde92136b6875abd3b.json",
+		"/C/Program Files (x86)/Steam/steamapps/common/Starbound/storage/player/e4a4c4571c1d50bde92136b6875abd3b.player",
+		"/C/Users/phase/Documents/CCers 2016-12-08",
+		"/C/Program Files (x86)/Bethesda Softworks/Star Trek Legacy/I AM AN ENGLISH FILE.txt",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/menu/ui/menu.html",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/menu/__resource.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/menu/ui/menu.js",
+		"/C/Program Files (x86)/Bethesda Softworks/Star Trek Legacy/config.cfg",
+		"/C/Users/phase/Workspace/School/Arvuti 2/Kodune kontrolltöö 4.odp",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/login/ui/login.js",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/menu/menu_server.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/playertools/playertools_client.lua",
+		"/C/Users/phase/Documents/FiveRebornServer/New/citmp-server.yml",
+		"/C/Users/phase/Downloads/lscustoms/lscustoms/__resource.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/playertools/__resource.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/old_resources/test/server_script.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/old_resources/test/client_script.lua",
+		"/C/Users/phase/Downloads/lscustoms/lscustoms/lscustoms_server.lua",
+		"/C/Users/phase/Downloads/lscustoms/lscustoms/lscustoms.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/login/ui/login.html",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/login/ui/login.css",
+		"/C/Users/phase/Documents/MineMenu/menu.json",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/menu/weapons_client.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/menu/weapons_server.lua",
+		"/C/Users/phase/Workspace/School/IK 1/Romance on the Railways",
+		"/C/Program Files (x86)/Steam/steamapps/common/Empyrion - Galactic Survival/Saves/Games/PlanetTesting/Sectors/Sectors.yaml",
+		"/C/Program Files (x86)/Steam/steamapps/common/Empyrion - Galactic Survival/Saves/Games/NewGame_0/Sectors/Sectors.yaml",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/buy-menu/__resource.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/buy-menu/ui/weapons.js",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/buy-menu/ui/weapons.html",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/buy-menu/ui/weapons.css",
+		"/C/Users/phase/Downloads/Helvetica/Helvetica/README.txt",
+		"/C/Users/phase/.gitconfig",
+		"/C/Users/phase/AppData/Local/Temp/7zOC59F4149/__resource.lua",
+		"/C/Users/phase/AppData/Local/Temp/7zOC59F8F37/lscustoms.lua",
+		"/C/Users/phase/AppData/Local/Temp/7zOC5980119/lscustoms_server.lua",
+		"/C/Users/phase/AppData/Local/Temp/7zOC597E627/lscustoms_server.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/login/__resource.lua",
+		"/C/Users/phase/Documents/ModdedGTA/Mods/RAGEPluginHook_0_47_1037_9935_ALPHA/Readme.txt",
+		"/C/Users/phase/Documents/ModdedGTA/Mods/01cf37-GTA Comes Alive v1.2/GTA Comes Alive/README.txt",
+		"/C/Users/phase/Documents/ModdedGTA/Grand Theft Auto V/scripts/addins/MrchaztaSmartFuelMod[settings].lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/weapons/ui/weapons.html",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/weapons/ui/weapons.js",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/weapons/ui/weapons.css",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/weapons/weapons_server.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/weapons/weapons_client.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/weapons/__resource.lua",
+		"/C/Program Files/Git/mingw64/share/doc/git-doc/giteveryday.html",
+		"/C/Program Files/Git/mingw64/share/doc/git-doc/git-checkout.html",
+		"/C/Program Files/Git/mingw64/share/doc/git-doc/git-diff.html",
+		"/C/Users/phase/Downloads/freeroam/freeroam/client/player/messaging.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/login/ui/test.js",
+		"/C/Users/phase/Workspace/School/Lepingu Nr.txt",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/[system]/chat/html/chat.js",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/[system]/chat/chat_client.lua",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/[system]/chat/chat_server.lua",
+		"/C/Users/phase/Downloads/freeroam/freeroam/server/main.lua",
+		"/C/Users/phase/Downloads/freeroam/freeroam/client/player/register.lua",
+		"/C/Users/phase/Documents/ModdedGTA/Mods/835512-MrchaztaSmartFuelMod[Pertamina] V.20/MrchaztaSmartFuelMod[Pertamina] V.20/Config & Tutorial see this .txt",
+		"/C/Users/phase/Documents/ModdedGTA/Grand Theft Auto V/fov-log.txt",
+		"/C/Users/phase/Documents/ModdedGTA/Mods/835512-MrchaztaSmartFuelMod[Pertamina] V.20/MrchaztaSmartFuelMod[Pertamina] V.20/MrchaztaSmartFuelMod[PERTAMINA].lua",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/[system]/chat/__resource.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/playerTools/__resource.lua",
+		"/C/Users/phase/Documents/ModdedGTA/Mods/d87252-GTA5FoV.1.33/README.txt",
+		"/C/Users/phase/Documents/ModdedGTA/Mods/085efd-CarDealerV1.9/CarDealerV1.9/Readme.txt",
+		"/C/Users/phase/Downloads/GTA5_REDUX+PATCHDAY1/GTA5_REDUX/GTA5_REDUX/RESHADE OPTIONS/README!.txt",
+		"/C/Users/phase/AppData/Local/Temp/7zO4E7428E3/INSTALLATION.txt",
+		"/C/Users/phase/Downloads/GTA5_REDUX+PATCHDAY1/REDUX_PATCHDAY1/REDUX_PATCHDAY1/READ ME!!!.txt",
+		"/C/Users/phase/Documents/ModdedGTA/Mods/fixthingy/gameconfig.xml",
+		"/C/Users/phase/Documents/ModdedGTA/Mods/fixthingy/INSTALLATION.txt",
+		"/C/Users/phase/Downloads/GTA5_REDUX+PATCHDAY1/GTA5_REDUX/GTA5_REDUX/READ ME!!!.txt",
+		"/C/Users/phase/AppData/Local/Temp/7zO08EF233F/INSTALLATION.txt",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/playerTools/playertools_client.lua",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/login/login_client.lua",
+		"/C/Users/phase/Downloads/freeroam/freeroam/server/player/register.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/player/player_client.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/player/__resource.lua",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/[system]/chat/html/jquery.faketextbox.js",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/login/__resource.lua",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/custom/__resource.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/old_resources/test/__resource.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/__resource.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/custom/__resource.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/custom/login/ui/login.html",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/custom/login/ui/login.css",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/custom/login/login_server.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/custom/login/login_client.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/custom/login/ui/login.js",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/custom/login/__resource.lua",
+		"/C/Users/phase/Downloads/freeroam/freeroam/client/player/native.lua",
+		"/C/Users/phase/Downloads/freeroam/freeroam/client/main.lua",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/[system]/chat/html/chat.css",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/[system]/chat/html/chat.html",
+		"/C/Users/phase/Downloads/freeroam/freeroam/lib/MySQL.lua",
+		"/C/Users/phase/Downloads/freeroam/db.sql",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/.gitignore",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/test/server_script.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/test/client_script.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/resources/test/__resource.lua",
+		"/C/Users/phase/Downloads/freeroam/freeroam/server/crew.lua",
+		"/C/Users/phase/AppData/Local/Temp/Temp1_freeroam.zip/freeroam/lib/MySQL.lua",
+		"/C/Users/phase/AppData/Local/Temp/Temp1_freeroam.zip/freeroam/lib/alarm/lalarm.c",
+		"/C/Users/phase/AppData/Local/Temp/Temp1_freeroam.zip/freeroam/lib/alarm/test.lua",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/lc.bat",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/k.bat",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/s.bat",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/ss.bat",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/ks.bat",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/kc.bat",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/c.bat",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/ls.bat",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/l.bat",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/kill-client.bat",
+		"/C/Users/phase/Workspace/Lua/GTA-V-Reborn/kill-server.bat",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/[system]/rconlog/rconlog_server.lua",
+		"/C/Users/phase/Documents/FiveRebornServer/New/resources/[system]/rconlog/rconlog_client.lua"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\Users\\phase\\Downloads\\freeroam\\freeroam",
+			"C:\\Users\\phase\\Documents\\FiveRebornServer\\New\\resources",
+			"C:\\Users\\phase\\Documents\\FiveRebornServer\\New",
+			"C:\\Users\\phase\\Downloads\\freeroam\\freeroam",
+			"C:\\Users\\phase\\Documents\\FiveRebornServer\\New"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"(?!\\n)\\s",
+			"(?!\\n)\\s(\\s)+",
+			"\\n(?!\\n)",
+			"wil",
+			"\\n",
+			"pitchfork",
+			"fer",
+			"zhe",
+			"zhegames",
+			"x-mod",
+			"modhash",
+			"\\s",
+			"-",
+			".thumbnail.self",
+			".thumbnail",
+			"thumbnail",
+			"command_points",
+			"command_",
+			"command",
+			"[\"type\"]",
+			"DoesEntityExist",
+			"left",
+			"\\n(?=[a-zA-Z])",
+			"\\n",
+			"\\s\\n",
+			"- Coordinates: [ -20, 0, -10 ]\n  Color:  \"0.04, 0.3, 0.37\"\n  Icon: \"Circle\"\n  Playfields:\n  - [ \"0, 0, 0\", \"Oscutune Orbit\", SpaceAsteroids ]\n  - [ \"0, 0, 0\", Oscutune, Temperate2 ]  ",
+			"Upsilo",
+			"Upsilon",
+			"'",
+			"\"",
+			"'",
+			"showlogin",
+			"print",
+			"password",
+			"chatCommandEntered",
+			"print",
+			"username",
+			"#please-login",
+			"fail",
+			"passwordCorrect",
+			"print",
+			"firstVisit",
+			"AwesomeInvisible",
+			"..\n",
+			"SetTextChatEnabled",
+			"focus",
+			"jquery.js",
+			"SetTextChatEnabled",
+			"SendNUIMessage",
+			"'playerSpawned'",
+			"onPlayerConnect",
+			"AwesomeFreeze",
+			"function hasAccount",
+			"hasaccount",
+			"transition: all 0.3s cubic-bezier",
+			"5",
+			"}",
+			"commandProcessed",
+			"par",
+			"para",
+			"SYSTEM",
+			"SendNUIMessage",
+			"NUI",
+			"RconPrint",
+			"print",
+			"echo(",
+			"print",
+			"gameModeStarted",
+			"source",
+			"NUI",
+			"chatResult",
+			"chatResult\nchatResult",
+			"chatResult",
+			"easing",
+			"resolve",
+			"front",
+			"login",
+			"TheFrontEnd",
+			"log",
+			"print",
+			"TWITCH",
+			"options",
+			"thefrontend",
+			"print",
+			"()\n",
+			"event",
+			"channel",
+			"print",
+			"status_code",
+			"evented",
+			"()",
+			"\"\"\n",
+			"create",
+			"= Z",
+			"switch",
+			"build",
+			"mode",
+			"build",
+			"minmar",
+			"\"pokemon_caught_by_type\"",
+			"\"pokemon_caught_by_type\":\"ACY\"",
+			"\"pokemon_caught_by_type\":\"ACY\"                                \"HCMA\"  ",
+			"False",
+			"True",
+			"b\"",
+			"'",
+			"\tS:",
+			"Added",
+			"}",
+			"BOP|Plains:BOP|Desert:BOP|Extreme Hills:BOP|Forest:BOP|Taiga:BOP|Swampland:MC|FrozenOcean:MC|FrozenRiver:BOP|Ice Plains:MC|Ice Mountains:BOP|DesertHills:BOP|ForestHills:BOP|TaigaHills:BOP|Extreme Hills Edge:BOP|Jungle:BOP|JungleHills",
+			"Extreme",
+			"(BOP|MC|GROWTHCRAFT|MOC|ENVIROMINE|DE)\\|[a-zA-Z\\s+\\(\\)]*(:|>)",
+			"<(.*)>",
+			"#(.*)(?=\\n)",
+			"<((BOP|MC|GROWTHCRAFT|MOC|ENVIROMINE|DE)\\|[a-zA-Z\\s+\\(\\)]*(:|>)|>)*",
+			"<((BOP|MC|GROWTHCRAFT|MOC|ENVIROMINE)\\|[a-zA-Z\\s+\\(\\)]*(:|>)|>)*",
+			"<((BOP|MC|GROWTHCRAFT|MOC|ENVIROMINE)\\|[a-zA-Z\\s+]*(:|>)|>)*",
+			"1",
+			"vampire",
+			"were",
+			"#Removed all spawn locations\t",
+			"were",
+			"\\n",
+			"sava",
+			":",
+			"\\:(?!BOP\\|)",
+			":",
+			"S:HILLS <Birch Forest Hills:Canyon:Canyon Ravine:Cold Taiga Hills:Coniferous Forest:DesertHills:Extreme Hills:ForestHills:Glacier:Grassland:Highland:JungleHills:Moor:Rainforest:Snowy Coniferous Forest:TaigaHills:Temperate Rainforest>"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"",
+			" ",
+			"\\s",
+			"",
+			"\\n\\/u\\/",
+			"\\n",
+			" ",
+			"type",
+			"\"type\"",
+			" ",
+			"",
+			"\\n",
+			"",
+			"\"",
+			"'",
+			"\"",
+			"#login-info",
+			"transition: all 0.5s cubic-bezier",
+			"print(",
+			"echo",
+			"true",
+			"\"",
+			"\t#S:",
+			"",
+			":",
+			":BOP|",
+			":MC|",
+			":BOP|",
+			":MC|",
+			":BOP|",
+			"\nMC|",
+			"",
+			":",
+			"",
+			"\nBOP|",
+			"BOP|",
+			"\nBOP|",
+			"BOP|\n",
+			"",
+			"BOP|",
+			"",
+			"\\t"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "bot.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 181.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
