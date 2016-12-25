@@ -140,8 +140,7 @@ class Bot:
 
 
 	def flair_post(self, post, flair):
-		self.subreddit.flair.set(
-			post, 
+		post.mod.flair(
 			text=flair["flair_text"], 
 			css_class=flair["flair_class"])
 		self.logger.info(
