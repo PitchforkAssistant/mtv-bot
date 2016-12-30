@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import praw
 import urllib
 import logging
