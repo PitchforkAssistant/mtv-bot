@@ -70,14 +70,18 @@ class Bot:
 		self.auth_reddit = self.config["auth"]["reddit"]
 
 
-		self.logger = logging.getLogger()
+		self.logger = logging.getLogger(__name__)
 		self.logger.setLevel(logging.INFO)
-		ch = logging.StreamHandler()
-		ch.setLevel(logging.INFO)
-		formatter = logging.Formatter(
+		self.ch = logging.StreamHandler()
+		self.ch.setLevel(logging.INFO)
+		self.formatter = logging.Formatter(
 			"%(asctime)s - %(name)s - [%(levelname)s] - %(message)s")
-		ch.setFormatter(formatter)
-		self.logger.addHandler(ch)
+		self.ch.setFormatter(self.formatter)
+		self.logger.addHandler(self.ch)
+		self.fh = logging.FileHandler('bot.log')
+		self.fh.setLevel(logging.DEBUG)
+		self.fh.setFormatter(self.formatter)
+		self.logger.addHandler(self.fh)
 
 		self.video_helper = VideoHelper(self.config, self.logger)
 
