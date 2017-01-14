@@ -17,6 +17,10 @@ class VideoHelper:
 	def get_site_and_id(self, url):
 		parsed_url = urllib.parse.urlparse(url)
 		if parsed_url.netloc.lower().endswith("youtube.com"):
+			if parsed_url.path.split("/")[1] == "attribution_link":
+				video_path = urllib.parse.urlparse(
+					urllib.parse.parse_qs(parsed_url.query)["u"][0])
+				return "yt", urllib.parse.parse_qs(video_path.query)["v"][0]
 			return "yt", urllib.parse.parse_qs(parsed_url.query)["v"][0]
 		elif parsed_url.netloc.lower().endswith("youtu.be"):
 			return "yt", parsed_url.path.split("/")[1]
@@ -79,7 +83,7 @@ class Bot:
 		self.ch.setFormatter(self.formatter)
 		self.logger.addHandler(self.ch)
 		self.fh = logging.FileHandler('bot.log')
-		self.fh.setLevel(logging.DEBUG)
+		self.fh.setLevel(logging.INFO)
 		self.fh.setFormatter(self.formatter)
 		self.logger.addHandler(self.fh)
 
