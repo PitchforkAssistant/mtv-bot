@@ -6,6 +6,7 @@ from time import sleep
 from simplejson import load
 from datetime import timedelta
 from isodate import parse_duration
+from logging.handlers import RotatingFileHandler 
 
 class VideoHelper:
 	def __init__(self, config, logger):
@@ -26,6 +27,7 @@ class VideoHelper:
 			return "yt", parsed_url.path.split("/")[1]
 		elif parsed_url.netloc.lower().endswith("vimeo.com"):
 			return "vim", parsed_url.path.split("/")[1]
+		return None, None
 
 	def get_duration(self, url):
 		site, id = self.get_site_and_id(url)
@@ -82,7 +84,7 @@ class Bot:
 			"%(asctime)s - %(name)s - [%(levelname)s] - %(message)s")
 		self.ch.setFormatter(self.formatter)
 		self.logger.addHandler(self.ch)
-		self.fh = logging.FileHandler('bot.log')
+		self.fh = RotatingFileHandler('bot.log', maxBytes=50000000)
 		self.fh.setLevel(logging.INFO)
 		self.fh.setFormatter(self.formatter)
 		self.logger.addHandler(self.fh)
@@ -119,7 +121,7 @@ class Bot:
 						except Exception as ex:
 							self.logger.error(
 								"Unexpected error occured " + 
-								" while flairing post: "  + str(ex))
+								"while flairing post: "  + str(ex))
 			except Exception as ex:
 				self.logger.error(
 					"Unexpected error occured during loop: " + str(ex))
@@ -146,7 +148,12 @@ class Bot:
 			post.report(flair["report"])
 			self.logger.info("Reported " + str(post) + 
 				" for '" + flair["report"] + "'")
-
+		if "remove" in flair:
+			post.mod.remove()
+			self.logger.info("Removed: " + str(post) + ", " + str(duration))
+			remove_msg = post.reply(flair["remove"])
+			remove_msg.mod.distinguish("yes", sticky=True)
+			self.logger.info("Sent Removal Message For: " + str(post))
 
 	def flair_post(self, post, flair):
 		post.mod.flair(

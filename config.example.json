@@ -5,7 +5,7 @@
 		{
 			"flair_text" : "Too short",
 			"flair_class" : "grey",
-			"report" : "Video might be too short!",
+			"remove" : "Video might be too short!",
 			"range" : ["PT0S","PT4M59S"]
 		},
 		{
