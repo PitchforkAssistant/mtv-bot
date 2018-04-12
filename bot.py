@@ -32,9 +32,9 @@ class VideoHelper:
 	def get_duration(self, url):
 		site, id = self.get_site_and_id(url)
 		if site is "yt":
-			return self.get_youtube_duration(id)
+			return self.get_youtube_duration(id), id
 		elif site is "vim":
-			return self.get_vimeo_duration(id)
+			return self.get_vimeo_duration(id), id
 
 	def get_vimeo_duration(self, id):
 		self.logger.info("Fetching Vimeo duration for: " + id)
@@ -74,7 +74,6 @@ class Bot:
 	def __init__(self, config):
 		self.config = config
 		self.auth_reddit = self.config["auth"]["reddit"]
-
 
 		self.logger = logging.getLogger(__name__)
 		self.logger.setLevel(logging.INFO)
@@ -121,7 +120,8 @@ class Bot:
 						except Exception as ex:
 							self.logger.error(
 								"Unexpected error occured " + 
-								"while flairing post: "  + str(ex))
+								"while flairing post (" + post.id + 
+								"): " + str(ex))
 			except Exception as ex:
 				self.logger.error(
 					"Unexpected error occured during loop: " + str(ex))
@@ -135,7 +135,39 @@ class Bot:
 		return False
 
 	def process_post(self, post):
-		duration = self.video_helper.get_duration(post.url)
+		duration, id = self.video_helper.get_duration(post.url)
+
+		if id is None:
+			self.logger.info("Video ID not fetched, skipping: " + str(post))
+			return
+		if "duplicates" in self.config:
+			# This *will* miss things due to reddit search being bad at 
+			# the best of times. Specifically, it will probably miss
+			# very close together duplicates as it takes upto an hour or
+			# so for a post to show up in search results.
+			# Ideally I should save all post IDs, vid IDs, timestamps
+			# and just search through that, but this work every time 60%
+			# of the time and I'm too lazy to do this properly. ¯\_(ツ)_/¯
+			for result in self.subreddit.search("url:" + id, sort="new"):
+				if result.id == post.id:
+				    continue
+				if post.created - result.created <= self.config["duplicates"]["time"]:
+					if "remove" in self.config["duplicates"]:
+						post.mod.remove()
+						msg = post.reply(self.config["duplicates"]["remove"])
+						msg.mod.distinguish("yes", sticky=True)
+						self.logger.info("Removed " + post.id + 
+							" as a recent duplicate of " + result.id + "!")
+						if ("flair_text" in self.config["duplicates"] and
+							"flair_class" in self.config["duplicates"]):
+							self.flair_post(post, self.config["duplicates"])
+						return
+					elif "report" in self.config["duplicates"]:
+						post.report(self.config["duplicates"]["report"])
+						self.logger.info("Reported " + post.id + 
+							" as a recent duplicate of " + result.id + "!")
+						return	
+
 		if duration is None:
 			self.logger.info("Duration not fetched, skipping: " + str(post))
 			return
@@ -144,16 +176,16 @@ class Bot:
 			self.logger.info("No appropriate flair, skipping: " + str(post))
 			return
 		self.flair_post(post, flair)
-		if "report" in flair:
-			post.report(flair["report"])
-			self.logger.info("Reported " + str(post) + 
-				" for '" + flair["report"] + "'")
 		if "remove" in flair:
 			post.mod.remove()
 			self.logger.info("Removed: " + str(post) + ", " + str(duration))
-			remove_msg = post.reply(flair["remove"])
-			remove_msg.mod.distinguish("yes", sticky=True)
+			msg = post.reply(flair["remove"])
+			msg.mod.distinguish("yes", sticky=True)
 			self.logger.info("Sent Removal Message For: " + str(post))
+		elif "report" in flair:
+			post.report(flair["report"])
+			self.logger.info("Reported " + str(post) + 
+				" for '" + flair["report"] + "'")
 
 	def flair_post(self, post, flair):
 		post.mod.flair(
@@ -164,7 +196,7 @@ class Bot:
 			flair["flair_text"] + "' and class '" + flair["flair_class"] + "'")
 
 	def get_duration_flair(self, duration):
-		for flair in self.config["actions"]:
+		for flair in self.config["flairs"]:
 			if flair["range"][0] <= duration and flair["range"][1] >= duration:
 				return flair
 
@@ -172,7 +204,7 @@ def load_config():
 	config = None
 	with open("config.json") as config_file:
 		config = load(config_file)
-	for flair in config["actions"]:
+	for flair in config["flairs"]:
 		flair["range"][0] = parse_duration(flair["range"][0])
 		flair["range"][1] = parse_duration(flair["range"][1])
 	return config
