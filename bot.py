@@ -154,7 +154,9 @@ class Bot:
 				if post.created - result.created <= self.config["duplicates"]["time"]:
 					if "remove" in self.config["duplicates"]:
 						post.mod.remove()
-						msg = post.reply(self.config["duplicates"]["remove"])
+						msg = post.reply(
+							self.config["duplicates"]["remove"].format(
+								"https://redd.it/" + result.id))
 						msg.mod.distinguish("yes", sticky=True)
 						self.logger.info("Removed " + post.id + 
 							" as a recent duplicate of " + result.id + "!")
