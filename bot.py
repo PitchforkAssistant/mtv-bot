@@ -75,16 +75,17 @@ class Bot:
 		self.config = config
 		self.auth_reddit = self.config["auth"]["reddit"]
 
+		self.logger_level = logging.DEBUG
 		self.logger = logging.getLogger(__name__)
-		self.logger.setLevel(logging.INFO)
+		self.logger.setLevel(self.logger_level)
 		self.ch = logging.StreamHandler()
-		self.ch.setLevel(logging.INFO)
+		self.ch.setLevel(self.logger_level)
 		self.formatter = logging.Formatter(
 			"%(asctime)s - %(name)s - [%(levelname)s] - %(message)s")
 		self.ch.setFormatter(self.formatter)
 		self.logger.addHandler(self.ch)
 		self.fh = RotatingFileHandler('bot.log', maxBytes=50000000)
-		self.fh.setLevel(logging.INFO)
+		self.fh.setLevel(self.logger_level)
 		self.fh.setFormatter(self.formatter)
 		self.logger.addHandler(self.fh)
 
