@@ -150,8 +150,8 @@ class Bot:
 			self.queue_check_triggered = False
 		if not self.queue_check_triggered and queue_count > self.config["queue_check"]["trigger_amount"]:
 			self.queue_check_triggered = True
-			subject = self.config["queue_check"]["subject"].format(queue_count)
-			message = self.config["queue_check"]["message"].format(queue_count)
+			subject = self.config["queue_check"]["subject"].format(queue_count, self.subreddit.display_name)
+			message = self.config["queue_check"]["message"].format(queue_count, self.subreddit.display_name)
 			for recipient in self.config["queue_check"]["recipients"]:
 				sub_or_user = None
 				if recipient.startswith("u/"):

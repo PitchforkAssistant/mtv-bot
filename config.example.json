@@ -49,8 +49,8 @@
 	"queue_check" : {
 		"trigger_amount" : 20,
 		"recipients" : ["/u/user", "/r/subbie"],
-		"subject" : "Modqueue Alert: {0}",
-		"message" : "There are currently {0} items in queue, please clear them!"
+		"subject" : "Modqueue Alert for {1}: {0}",
+		"message" : "There are currently {0} items in the {1} queue, please clear them!"
 	},
 	"auth" :
 	{
