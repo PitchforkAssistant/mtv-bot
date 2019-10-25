@@ -126,6 +126,7 @@ class Bot:
 								"while flairing post (" + post.id + 
 								"): " + str(ex))
 					try:
+						self.logger.debug("Performing queue check!")
 						self.queue_check()
 					except Exception as ex:
 						self.logger.exception("Unexpected error during " +
@@ -148,10 +149,13 @@ class Bot:
 			queue_count = queue_count + 1
 		if self.queue_check_triggered and queue_count < self.config["queue_check"]["trigger_amount"]:
 			self.queue_check_triggered = False
-		if not self.queue_check_triggered and queue_count > self.config["queue_check"]["trigger_amount"]:
+			self.logger.info("Queue is below threshold again!")
+		if not self.queue_check_triggered and queue_count >= self.config["queue_check"]["trigger_amount"]:
 			self.queue_check_triggered = True
+			self.logger.info("Queue is above threshold!")
 			subject = self.config["queue_check"]["subject"].format(queue_count, self.subreddit.display_name)
 			message = self.config["queue_check"]["message"].format(queue_count, self.subreddit.display_name)
+			self.logger.info("Sending queue alerts!")
 			for recipient in self.config["queue_check"]["recipients"]:
 				sub_or_user = None
 				if recipient.startswith("u/"):
@@ -165,6 +169,7 @@ class Bot:
 				else:
 					sub_or_user = self.reddit.redditor(recipient)
 				sub_or_user.message(subject, message)
+			self.logger.info("Queue alerts sent!")
 		
 
 	def process_post(self, post):
