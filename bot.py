@@ -180,7 +180,7 @@ class Bot:
 			# so for a post to show up in search results.
 			# Ideally I should save all post IDs, vid IDs, timestamps
 			# and just search through that, but this work every time 60%
-			# of the time and I'm too lazy to do this properly. ¯\_(ツ)_/¯
+			# of the time and I'm too lazy to do this properly.
 			for result in self.subreddit.search("url:" + id, sort="new"):
 				if result.id == post.id:
 				    continue
