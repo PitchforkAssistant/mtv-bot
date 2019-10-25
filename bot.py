@@ -89,6 +89,8 @@ class Bot:
 		self.fh.setFormatter(self.formatter)
 		self.logger.addHandler(self.fh)
 
+		self.queue_check_triggered = False
+
 		self.video_helper = VideoHelper(self.config, self.logger)
 
 	def start(self):
@@ -119,12 +121,17 @@ class Bot:
 							self.logger.info("New unflaired post: " + str(post))
 							self.process_post(post)
 						except Exception as ex:
-							self.logger.error(
+							self.logger.exception(
 								"Unexpected error occured " + 
 								"while flairing post (" + post.id + 
 								"): " + str(ex))
+					try:
+						self.queue_check()
+					except Exception as ex:
+						self.logger.exception("Unexpected error during " +
+							"modqueue count check: " + str(ex))
 			except Exception as ex:
-				self.logger.error(
+				self.logger.exception(
 					"Unexpected error occured during loop: " + str(ex))
 			sleep(self.config["retry_delay"])
 
@@ -134,6 +141,31 @@ class Bot:
 			post.is_self):
 			return True
 		return False
+
+	def queue_check(self):
+		queue_count = 0
+		for _ in self.subreddit.mod.modqueue(limit=None):
+			queue_count = queue_count + 1
+		if self.queue_check_triggered and queue_count < self.config["queue_check"]["trigger_amount"]:
+			self.queue_check_triggered = False
+		if not self.queue_check_triggered and queue_count > self.config["queue_check"]["trigger_amount"]:
+			self.queue_check_triggered = True
+			subject = self.config["queue_check"]["subject"].format(queue_count)
+			message = self.config["queue_check"]["message"].format(queue_count)
+			for recipient in self.config["queue_check"]["recipients"]:
+				sub_or_user = None
+				if recipient.startswith("u/"):
+					sub_or_user = self.reddit.redditor(recipient[2:])
+				elif recipient.startswith("/u/"):
+					sub_or_user = self.reddit.redditor(recipient[3:])
+				elif recipient.startswith("r/"):
+					sub_or_user = self.reddit.subreddit(recipient[2:])
+				elif recipient.startswith("/r/"):
+					sub_or_user = self.reddit.subreddit(recipient[3:])
+				else:
+					sub_or_user = self.reddit.redditor(recipient)
+				sub_or_user.message(subject, message)
+		
 
 	def process_post(self, post):
 		duration, id = self.video_helper.get_duration(post.url)
