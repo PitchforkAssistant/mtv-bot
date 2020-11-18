@@ -1,4 +1,3 @@
-#!/usr/bin/env python3.7
 import praw
 import urllib
 import logging
@@ -31,9 +30,9 @@ class VideoHelper:
 
 	def get_duration(self, url):
 		site, id = self.get_site_and_id(url)
-		if site is "yt":
+		if site == "yt":
 			return self.get_youtube_duration(id), id
-		elif site is "vim":
+		elif site == "vim":
 			return self.get_vimeo_duration(id), id
 
 	def get_vimeo_duration(self, id):
