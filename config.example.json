@@ -46,12 +46,6 @@
 		"flair_class" : "red",
 		"remove" : "Message that gets left, this can be named report and it will just report. If it is remove and both flair things are provided, it will set the flair too. In the remove message {0} gets replaced with the recent post's URL."
 	},
-	"queue_check" : {
-		"trigger_amount" : 20,
-		"recipients" : ["/u/user", "/r/subbie"],
-		"subject" : "Modqueue Alert for {1}: {0}",
-		"message" : "There are currently {0} items in the {1} queue, please clear them!"
-	},
 	"auth" :
 	{
 		"reddit" : {

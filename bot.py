@@ -88,8 +88,6 @@ class Bot:
 		self.fh.setFormatter(self.formatter)
 		self.logger.addHandler(self.fh)
 
-		self.queue_check_triggered = False
-
 		self.video_helper = VideoHelper(self.config, self.logger)
 
 	def start(self):
@@ -124,12 +122,6 @@ class Bot:
 								"Unexpected error occured " + 
 								"while flairing post (" + post.id + 
 								"): " + str(ex))
-					try:
-						self.logger.debug("Performing queue check!")
-						self.queue_check()
-					except Exception as ex:
-						self.logger.exception("Unexpected error during " +
-							"modqueue count check: " + str(ex))
 			except Exception as ex:
 				self.logger.exception(
 					"Unexpected error occured during loop: " + str(ex))
@@ -141,35 +133,6 @@ class Bot:
 			post.is_self):
 			return True
 		return False
-
-	def queue_check(self):
-		queue_count = 0
-		for _ in self.subreddit.mod.modqueue(limit=None):
-			queue_count = queue_count + 1
-		if self.queue_check_triggered and queue_count < self.config["queue_check"]["trigger_amount"]:
-			self.queue_check_triggered = False
-			self.logger.info("Queue is below threshold again!")
-		if not self.queue_check_triggered and queue_count >= self.config["queue_check"]["trigger_amount"]:
-			self.queue_check_triggered = True
-			self.logger.info("Queue is above threshold!")
-			subject = self.config["queue_check"]["subject"].format(queue_count, self.subreddit.display_name)
-			message = self.config["queue_check"]["message"].format(queue_count, self.subreddit.display_name)
-			self.logger.info("Sending queue alerts!")
-			for recipient in self.config["queue_check"]["recipients"]:
-				sub_or_user = None
-				if recipient.startswith("u/"):
-					sub_or_user = self.reddit.redditor(recipient[2:])
-				elif recipient.startswith("/u/"):
-					sub_or_user = self.reddit.redditor(recipient[3:])
-				elif recipient.startswith("r/"):
-					sub_or_user = self.reddit.subreddit(recipient[2:])
-				elif recipient.startswith("/r/"):
-					sub_or_user = self.reddit.subreddit(recipient[3:])
-				else:
-					sub_or_user = self.reddit.redditor(recipient)
-				sub_or_user.message(subject, message)
-			self.logger.info("Queue alerts sent!")
-		
 
 	def process_post(self, post):
 		duration, id = self.video_helper.get_duration(post.url)
