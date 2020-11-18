@@ -91,5 +91,8 @@ ENV/
 # Config
 config.json
 
+# Praw
+praw.ini
+
 # Sublime
 *.sublime-workspace

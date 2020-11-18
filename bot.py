@@ -1,6 +1,7 @@
 import praw
 import urllib
 import logging
+from os import getenv
 from time import sleep
 from simplejson import load
 from datetime import timedelta
@@ -8,10 +9,8 @@ from isodate import parse_duration
 from logging.handlers import RotatingFileHandler 
 
 class VideoHelper:
-	def __init__(self, config, logger):
-		self.config = config
-		self.yt_api_key = config["auth"]["youtube"]["api_key"]
-
+	def __init__(self, yt_api_key, logger):
+		self.yt_api_key = yt_api_key
 		self.logger = logger
 
 	def get_site_and_id(self, url):
@@ -72,7 +71,6 @@ class VideoHelper:
 class Bot:
 	def __init__(self, config):
 		self.config = config
-		self.auth_reddit = self.config["auth"]["reddit"]
 
 		self.logger_level = logging.DEBUG
 		self.logger = logging.getLogger(__name__)
@@ -88,25 +86,24 @@ class Bot:
 		self.fh.setFormatter(self.formatter)
 		self.logger.addHandler(self.fh)
 
-		self.video_helper = VideoHelper(self.config, self.logger)
-
 	def start(self):
 		self.login()
 		self.loop()
 
 	def login(self):
 		try:
-			self.reddit = praw.Reddit(
-				client_id = self.auth_reddit["client_id"],
-				client_secret = self.auth_reddit["client_secret"],
-				user_agent = self.auth_reddit["user_agent"],
-				username = self.auth_reddit["username"],
-				password = self.auth_reddit["password"])
+			self.reddit = praw.Reddit()
 			self.subreddit = self.reddit.subreddit(self.config["subreddit"])
-			self.logger.info("Logged in!")
+			self.logger.info("Logged into reddit!")
+
+			yt_api_key = self.reddit.config.custom.get("yt_api_key", getenv("yt_api_key"))
+			if yt_api_key is None:
+				raise TypeError("Make sure yt_api_key is in praw.ini or an envvar!")
+			self.video_helper = VideoHelper(yt_api_key, self.logger)
+
 		except Exception as ex:
 			self.logger.critical(
-				"An error occured while logging in: " + str(ex))
+				"An error occured while logging in: " + str(ex), exc_info=True)
 
 	def loop(self):
 		while True:
