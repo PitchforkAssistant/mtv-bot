@@ -96,3 +96,6 @@ praw.ini
 
 # Sublime
 *.sublime-workspace
+
+# .vscode
+.vscode
